@@ -1,0 +1,28 @@
+.comment {
+	color: #6a9955;
+}
+
+.string {
+	color: #ce9178;
+}
+
+.number {
+	color: #b5cea8;
+}
+
+.identifier {
+	font-style: italic;
+	font-weight: bold;
+	color: #9cdcfe;
+}
+
+.keyword {
+	font-weight: bold;
+	color: #c586c0;
+}
+
+.error {
+	color: #f44747;
+	font-weight: bold;
+	text-decoration: underline;
+}

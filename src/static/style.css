@@ -1,0 +1,98 @@
+@import url("/tokens.css");
+
+:root {
+	--line-num-width: 80px;
+	--dark-bg-main: #1a1a1a;
+	--editor-height: 80vh;
+	--editor-font-size: 28px;
+	--editor-font-family: "Courier New", Courier, monospace;
+}
+
+html {
+	background: var(--dark-bg-main) !important;
+}
+
+#highlighted-code {
+	position: fixed;
+	width: 100%;
+	height: var(--editor-height);
+	left: 0px;
+	top: 0px;
+	font-family: var(--editor-font-family);
+	font-size: var(--editor-font-size);
+	border: none;
+	padding: 10px;
+	padding-bottom: 35px;
+	box-sizing: border-box;
+	resize: none;
+	white-space: pre-wrap; /* Preserve formatting */
+	overflow: hidden;
+	z-index: -3; /* Above background but below input */
+	pointer-events: none; /* Prevent interaction */
+	overflow: auto;
+	outline: 3px solid #141414;
+}
+
+#code-input {
+	position: fixed;
+	width: 100%;
+	height: var(--editor-height);
+	left: 0px;
+	top: 0px;
+	font-family: var(--editor-font-family);
+	font-size: var(--editor-font-size);
+	color: transparent;
+	background-color: transparent;
+	border: none;
+	padding: 10px;
+	box-sizing: border-box;
+	resize: none;
+	white-space: pre-wrap;
+	overflow: auto;
+	pointer-events: auto; /* Keep input functional */
+	caret-color: #ffffff; /* Ensure cursor is visible */
+}
+
+#code-input:focus {
+	outline: none;
+}
+
+#output {
+	position: fixed;
+	width: 100%;
+	height: calc(100vh - var(--editor-height));
+	left: 0px;
+	bottom: 0px;
+	font-family: var(--editor-font-family);
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #141414;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+#run-button {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	z-index: 100;
+}
+
+#run-button:hover {
+	cursor: pointer;
+}
+
+.run_running {
+	background-color: #17a2b8;
+}
+
+.run_standby {
+	background-color: #28a745;
+}

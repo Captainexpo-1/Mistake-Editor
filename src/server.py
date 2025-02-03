@@ -5,6 +5,9 @@ import sys
 import mistake.main
 import mistake.runtime.interpreter
 import mistake.runtime.stdlib.std_funcs
+import os
+import dotenv
+dotenv.load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../.env"))
 
 app = Flask(__name__, static_folder="static")
 socketio = SocketIO(app)
@@ -43,4 +46,6 @@ def handle_run_code_event(json):
 
 if __name__ == "__main__":
     sys.setrecursionlimit(10**6)
-    socketio.run(app, debug=True)
+    PORT = int(os.environ.get("PORT", 5000))
+    print("Starting server on port", PORT)
+    socketio.run(app, debug=True, port=PORT)
